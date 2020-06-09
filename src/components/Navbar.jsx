@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { useDarkMode } from '../hooks/useDarkMode';
 
 const Navbar = () => {
-  const [value, setValue] = useDarkMode(false);
+  const [darkMode, setDarkMode] = useDarkMode(false);
   const toggleMode = e => {
     e.preventDefault();
-    setValue(!value);
+    setDarkMode(!darkMode);
   };
   return (
     <nav className="navbar">
@@ -13,7 +13,7 @@ const Navbar = () => {
       <div className="dark-mode__toggle">
         <div
           onClick={toggleMode}
-          className={value.darkMode ? 'toggle toggled' : 'toggle'}
+          className={darkMode ? 'toggle toggled' : 'toggle'}
         />
       </div>
     </nav>
